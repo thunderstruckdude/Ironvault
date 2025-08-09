@@ -1,0 +1,1 @@
+A policy-driven, auditable, extensible sandbox that combines the best of userland composability (Firejail / bubblewrap) with kernel-enforced primitives (Landlock / AppArmor / seccomp / cgroups / eBPF) and modern observability/analysis features — all implemented in safe, idiomatic Rust.
