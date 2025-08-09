@@ -1,0 +1,33 @@
+# policy.yaml - sample ProcBox policy
+name: "basic"
+filesystem:
+  ro:
+    - /usr
+    - /lib
+    - /bin
+  rw:
+    - /tmp
+  tmpfs:
+    - /tmp/.sandbox_tmp
+network:
+  allow: false     # false => remove network namespace or unshare net and drop interfaces
+limits:
+  memory_mb: 200   # 0 => no limit
+  cpu_seconds: 5   # wall clock timeout
+seccomp:
+  mode: "whitelist"   # "off"|"whitelist"
+  allow_syscalls:
+    - read
+    - write
+    - exit
+    - futex
+    - nanosleep
+    - rt_sigreturn
+    - sigreturn
+    - brk
+    - mmap
+    - mprotect
+    - munmap
+    - clone
+    - execve
+    - openat
